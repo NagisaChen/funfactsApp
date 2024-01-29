@@ -20,6 +20,7 @@ import com.nagisa.funfactsapp.ui.TextFiledComponent
 import com.nagisa.funfactsapp.ui.TopBar
 import com.nagisa.funfactsapp.ui.UserInputViewModel
 import com.nagisa.funfactsapp.R
+import com.nagisa.funfactsapp.ui.ButtonComponent
 
 @Composable
 fun UserInputScreen(userInputViewModel: UserInputViewModel) {
@@ -76,6 +77,14 @@ fun UserInputScreen(userInputViewModel: UserInputViewModel) {
                 }, selected = userInputViewModel.uiState.value.animalSelected == "Dog")
 
             }
+
+            Spacer(modifier = Modifier.weight(1f))
+
+            if (userInputViewModel.isValidState()) {
+                ButtonComponent(goToDetailScreen = {
+                })
+            }
+
         }
     }
 }

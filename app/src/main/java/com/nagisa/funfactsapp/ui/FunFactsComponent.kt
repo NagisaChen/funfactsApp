@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.OutlinedTextField
@@ -166,4 +167,29 @@ fun AnimalCard(
 @Composable
 fun AnimalCardPreview() {
 //    AnimalCard(R.drawable.dog, true)
+}
+
+@Composable
+fun ButtonComponent(
+    goToDetailScreen: () -> Unit
+) {
+    Button(
+        modifier = Modifier.fillMaxWidth(),
+        onClick = {
+            goToDetailScreen()
+        }) {
+        TextComponent(
+            textValue = "Go to Details Screen",
+            textColor = Color.White,
+            textSize = 18.sp
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ButtonComponentPreview() {
+    ButtonComponent {
+
+    }
 }
